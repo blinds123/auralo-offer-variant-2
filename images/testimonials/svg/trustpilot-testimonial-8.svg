@@ -1,0 +1,50 @@
+<svg width="400" height="350" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Card Background -->
+  <rect width="400" height="350" rx="15" fill="white"/>
+  <rect width="400" height="350" rx="15" stroke="#e0e0e0" stroke-width="1" fill="none"/>
+  
+  <!-- Trustpilot Header -->
+  <rect x="0" y="0" width="400" height="60" rx="15 15 0 0" fill="#00b67a"/>
+  
+  <!-- Stars -->
+  <g transform="translate(20, 20)">
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="white" transform="scale(1)"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="white" transform="translate(25, 0) scale(1)"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="white" transform="translate(50, 0) scale(1)"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="white" transform="translate(75, 0) scale(1)"/>
+    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="white" transform="translate(100, 0) scale(1)"/>
+  </g>
+  
+  <!-- Rating Text -->
+  <text x="300" y="40" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Excellent</text>
+  
+  <!-- Review Title -->
+  <text x="20" y="90" fill="#191919" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Worth every penny and more!
+  </text>
+  
+  <!-- Review Content -->
+  <foreignObject x="20" y="100" width="360" height="180">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="color: #191919; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6;">
+      <p style="margin: 10px 0;">I was skeptical about ordering fashion online, especially at this price point. But WOW - the Desert Road Set blew me away! The quality is insane for $29.</p>
+      <p style="margin: 10px 0;">It arrived in 4 days, beautifully packaged. The fabric feels expensive, doesn't wrinkle, and the fit is incredibly flattering. I've worn it to work meetings and dinner dates - versatile!</p>
+      <p style="margin: 10px 0;">Just ordered 3 more sets as gifts. My mom and sisters are going to LOVE these. Best find of 2024!</p>
+    </div>
+  </foreignObject>
+  
+  <!-- Reviewer Info -->
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <foreignObject x="20" y="290" width="200" height="40">
+      <div style="display: flex; align-items: center;">
+        <div style="width: 35px; height: 35px; background: #00b67a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 10px;">MP</div>
+        <div>
+          <div style="font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #191919;">Maria P.</div>
+          <div style="font-family: Arial, sans-serif; font-size: 12px; color: #999;">Verified Buyer • UK</div>
+        </div>
+      </div>
+    </foreignObject>
+  </div>
+  
+  <!-- Date -->
+  <text x="340" y="310" fill="#999" font-family="Arial, sans-serif" font-size="12">5 days ago</text>
+</svg>

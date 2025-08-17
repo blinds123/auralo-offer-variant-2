@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Test</title>
+</head>
+<body>
+    <h1>Testing All Button Functionality</h1>
+    
+    <script>
+        // Test script to verify all buttons work
+        function testButtons() {
+            const results = [];
+            
+            // Test 1: Check all primary buttons exist
+            const primaryButtons = document.querySelectorAll('.buy-now-button.primary');
+            results.push(`Primary (Order Now) buttons found: ${primaryButtons.length}`);
+            
+            // Test 2: Check all secondary buttons exist
+            const secondaryButtons = document.querySelectorAll('.buy-now-button.secondary');
+            results.push(`Secondary (Pre-Order) buttons found: ${secondaryButtons.length}`);
+            
+            // Test 3: Check button pairs
+            let pairsCount = 0;
+            primaryButtons.forEach(btn => {
+                const parent = btn.parentElement;
+                const hasSecondary = parent.querySelector('.buy-now-button.secondary');
+                if (hasSecondary) pairsCount++;
+            });
+            results.push(`Button pairs (Order Now + Pre-Order together): ${pairsCount}`);
+            
+            // Test 4: Check onclick handlers
+            let validateCount = 0;
+            let addToCartCount = 0;
+            
+            document.querySelectorAll('.buy-now-button').forEach(btn => {
+                const onclick = btn.getAttribute('onclick');
+                if (onclick) {
+                    if (onclick.includes('validateAndBuy')) validateCount++;
+                    if (onclick.includes('addToCart')) addToCartCount++;
+                }
+            });
+            
+            results.push(`Buttons with validateAndBuy: ${validateCount}`);
+            results.push(`Buttons with addToCart: ${addToCartCount}`);
+            
+            // Test 5: Check if functions exist
+            results.push(`validateAndBuy function exists: ${typeof validateAndBuy === 'function'}`);
+            results.push(`addToCart function exists: ${typeof addToCart === 'function'}`);
+            results.push(`showSimpleSwapPopup function exists: ${typeof showSimpleSwapPopup === 'function'}`);
+            results.push(`showSizeSelectionAlert function exists: ${typeof showSizeSelectionAlert === 'function'}`);
+            results.push(`selectSize function exists: ${typeof selectSize === 'function'}`);
+            results.push(`updateAllButtonsWithSize function exists: ${typeof updateAllButtonsWithSize === 'function'}`);
+            
+            // Test 6: Check selectedSize variable
+            results.push(`selectedSize variable: ${typeof selectedSize !== 'undefined' ? selectedSize || 'null (no size selected)' : 'undefined'}`);
+            
+            return results;
+        }
+        
+        // Run test when main page loads
+        window.addEventListener('message', function(e) {
+            if (e.data === 'runTest') {
+                const results = testButtons();
+                parent.postMessage({type: 'testResults', results: results}, '*');
+            }
+        });
+        
+        // Open main site in iframe
+        document.write('<iframe src="http://localhost:8000" style="width:100%; height:500px; border:1px solid #ccc;"></iframe>');
+        document.write('<button onclick="document.querySelector(\'iframe\').contentWindow.postMessage(\'runTest\', \'*\')">Run Tests</button>');
+        document.write('<div id="results"></div>');
+        
+        window.addEventListener('message', function(e) {
+            if (e.data.type === 'testResults') {
+                document.getElementById('results').innerHTML = '<h2>Test Results:</h2><ul>' + 
+                    e.data.results.map(r => `<li>${r}</li>`).join('') + '</ul>';
+            }
+        });
+    </script>
+</body>
+</html>

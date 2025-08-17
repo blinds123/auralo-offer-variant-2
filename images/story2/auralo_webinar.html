@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auralo Desert Road Micro‑Webinar</title>
+    <!-- Basic slider styles (no external dependencies) -->
+    <style>
+      :root {
+        /* tonal palette taken from the existing Auralo site: soft pastels */
+        --beige: #f7f5ef;
+        --sand: #f2e8d8;
+        --cream: #fff9f3;
+        --accent: #e8dede;
+        --dark: #111;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--cream);
+        color: var(--dark);
+        overscroll-behavior-x: contain;
+      }
+
+      /* horizontal slider container */
+      .slider {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .slide-card {
+        flex: 0 0 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        box-sizing: border-box;
+        text-align: center;
+        scroll-snap-align: start;
+      }
+      .slide-content {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .slide-heading {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .slide-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+      }
+      .slide-img {
+        width: 80%;
+        max-width: 320px;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+      .btn {
+        display: inline-block;
+        background: #ffda79;
+        color: var(--dark);
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+      .btn:hover {
+        background: #ffe699;
+      }
+      /* Individual card backgrounds */
+      .bg-beige {
+        background: var(--beige);
+      }
+      .bg-sand {
+        background: var(--sand);
+      }
+      .bg-cream {
+        background: var(--cream);
+      }
+      .bg-gradient-blue {
+        background: linear-gradient(135deg, #e7e7ff 0%, #f5f5ff 100%);
+      }
+      .bg-gradient-pink {
+        background: linear-gradient(135deg, #fcedeb 0%, #fff7f2 100%);
+      }
+      .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin: 1rem 0;
+      }
+      .strikethrough {
+        text-decoration: line-through;
+        opacity: 0.6;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slider container -->
+    <div class="slider">
+        <!-- Card 1: Hook -->
+        <div class="slide-card bg-gradient-pink">
+          <div class="slide-content">
+            <img
+              src="pants_img3.jpg"
+              alt="Model wearing the full Desert Road set (gold)"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Stop Scrolling—This Will Change Your Night</h2>
+            <p class="slide-text">
+              This two‑piece Desert Road set is rewriting the rules of chic. It’s
+              not denim, it’s not another dress. It’s everything you need to own
+              the night and feel unstoppable.
+            </p>
+          </div>
+        </div>
+        <!-- Card 2: Future pace -->
+        <div class="slide-card bg-cream">
+          <div class="slide-content">
+            <img
+              src="top_img3.jpg"
+              alt="Imagine the attention wearing satin set"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Imagine the Compliments</h2>
+            <p class="slide-text">
+              Picture yourself stepping into your next night out wearing satin
+              that drapes like liquid gold. Heads turn, compliments flow, and
+              you feel like you just unlocked your own runway. You’re not just
+              wearing clothes—you’re commanding the room.
+            </p>
+          </div>
+        </div>
+        <!-- Card 3: Credibility -->
+        <div class="slide-card bg-beige">
+          <div class="slide-content">
+            <img
+              src="pants_img2.jpg"
+              alt="Close‑up showing quality and craft"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Built on Trust &amp; Craftsmanship</h2>
+            <p class="slide-text">
+              After selling out thousands of pieces worldwide, Auralo teamed up
+              with New Arrivals to craft this limited drop. Each Desert Road set
+              is hand‑cut, sewn per order, and ethically produced—the kind of
+              quality our customers rave about.
+            </p>
+          </div>
+        </div>
+        <!-- Card 4: The One Thing -->
+        <div class="slide-card bg-sand">
+          <div class="slide-content">
+            <img
+              src="top_square_center.jpg"
+              alt="Two piece Desert Road set"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">A New Category of Outfit</h2>
+            <p class="slide-text">
+              Most outfits make you choose between comfort and glamour. This is
+              our new category: a full look that moves like silk and wears like
+              pajamas. It’s both a top and pants designed as one silhouette—
+              slip into couture without the compromise.
+            </p>
+          </div>
+        </div>
+        <!-- Card 5: Secret 1 – Vehicle belief -->
+        <div class="slide-card bg-gradient-blue">
+          <div class="slide-content">
+            <img
+              src="pants_square_bottom.jpg"
+              alt="Desert Road luxe fabric"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Secret #1: Luxe Fabric</h2>
+            <p class="slide-text">
+              Our satin blend is the secret to draping like high couture yet
+              breathing like your favourite tee. No more stiff fabrics—you
+              finally get luxury that fits your lifestyle.
+            </p>
+          </div>
+        </div>
+        <!-- Card 6: Secret 2 – Internal belief -->
+        <div class="slide-card bg-cream">
+          <div class="slide-content">
+            <img
+              src="top_square_bottom.jpg"
+              alt="Flattering cut"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Secret #2: Flattering Cut</h2>
+            <p class="slide-text">
+              Whether you’re a size 34 or a 44, the tailored waist and wide leg
+              skim and stretch in all the right places. You don’t
+              need a model’s body to look and feel incredible.
+            </p>
+          </div>
+        </div>
+        <!-- Card 7: Secret 3 – External belief -->
+        <div class="slide-card bg-beige">
+          <div class="slide-content">
+            <img
+              src="pants_square_center.jpg"
+              alt="Versatile styling"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Secret #3: Built‑in Versatility</h2>
+            <p class="slide-text">
+              The top and pants are intentionally designed to work together and
+              apart. Style the top with denim or the pants with a tee, and your
+              wardrobe instantly doubles. This set is as flexible as your
+              calendar.
+            </p>
+          </div>
+        </div>
+        <!-- Card 8: Proof -->
+        <div class="slide-card bg-gradient-pink">
+          <div class="slide-content">
+            <img
+              src="top_img2.jpg"
+              alt="Customer proof"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Loved by Early Adopters</h2>
+            <p class="slide-text">
+              We’re not just saying this—our early access list nearly crashed
+              our site. Stories and selfies poured in from Sydney to London
+              with rave reviews. The Desert Road set is turning everyday
+              nights into unforgettable moments.
+            </p>
+          </div>
+        </div>
+        <!-- Card 9: Offer stack -->
+        <div class="slide-card bg-cream">
+          <div class="slide-content">
+            <img
+              src="pants_square_center.jpg"
+              alt="Full view of the Desert Road set"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Here’s Everything You Get</h2>
+            <p class="slide-text">
+              The two‑piece Desert Road top & pants, priority production on
+              your order, complimentary worldwide shipping, VIP early access to
+              our next drop and a confidence boost you can’t put a price on.
+            </p>
+          </div>
+        </div>
+        <!-- Card 10: Price anchor -->
+        <div class="slide-card bg-beige">
+          <div class="slide-content">
+            <img
+              src="pants_square_bottom.jpg"
+              alt="Close‑up of the luxe satin pants"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Valued Over $1,000</h2>
+            <p class="slide-text">
+              Comparable designer sets retail for well over $1,000 (we use the
+              same factories and materials as top luxury brands). We normally
+              sell this set for $200, but because our limited‑edition drop has
+              already sold out most sizes and we uncovered a handful of sets
+              left in the warehouse, you can secure yours for just $29.
+            </p>
+            <div class="price">
+              <span class="strikethrough">$1,140</span> → $29
+            </div>
+          </div>
+        </div>
+        <!-- Card 11: Risk reversal &amp; urgency -->
+        <div class="slide-card bg-sand">
+          <div class="slide-content">
+            <img
+              src="top_img2.jpg"
+              alt="Back view of the Desert Road set"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">This Window Won’t Last</h2>
+            <p class="slide-text">
+              Because each set is crafted per order, we can only accept
+              exchanges and there are no mass‑produced restocks. We found a
+              handful of sets left in the warehouse after our drop sold out.
+              The pre‑order window closes soon. This is your chance to lock in
+              your size and style, risk‑free.
+            </p>
+          </div>
+        </div>
+        <!-- Card 12: CTA -->
+        <div class="slide-card bg-gradient-blue">
+          <div class="slide-content">
+            <img
+              src="top_square_center.jpg"
+              alt="Desert Road set front view"
+              class="slide-img"
+            />
+            <h2 class="slide-heading">Ready to Own the Night?</h2>
+            <p class="slide-text">
+              Tap the button below and claim your Desert Road bundle for only
+              $29. This is your moment — dress for it.
+            </p>
+            <a href="#checkout" class="btn">Buy My Set for $29</a>
+          </div>
+        </div>
+    </div>
+    <p style="text-align:center;font-size:0.9rem;color:#888;margin-top:-1rem;">Swipe to continue ↠</p>
+    <!-- No external JS necessary; the horizontal slider uses native scroll with snap -->
+  </body>
+</html>
