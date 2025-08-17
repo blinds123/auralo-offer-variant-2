@@ -2756,7 +2756,7 @@
         <!-- Main CTA - Above the fold -->
         <div class="mobile-cta-section">
             <button class="mobile-main-cta" onclick="showCheckoutPopup()">
-                GET MY SET → $29
+                PAY $99 NOW
             </button>
             <p style="font-size: 11px; text-align: center; margin-top: 8px; color: var(--text-light);">
                 🔒 Secure Checkout • 💳 Multiple Payment Options
@@ -3185,8 +3185,8 @@
                 </div>
                 
                 <button onclick="initiateCheckout()" style="width: 100%; background: linear-gradient(135deg, var(--primary-gold), var(--accent-bronze)); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 700; border-radius: 100px; cursor: pointer; box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3); animation: pulse 2s infinite;">
-                    <span>YES! CLAIM MY $29 SET NOW</span>
-                    <div style="font-size: 10px; margin-top: 2px; opacity: 0.95;">🔒 Secure Checkout • Ships in <span id="ship-timer">2h 47m</span></div>
+                    <span>GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span></span>
+                    <div style="font-size: 10px; margin-top: 2px; opacity: 0.95;">🔒 Ships in 2 Weeks • Just Cover Shipping</div>
                 </button>
                 
                 <!-- TREY'S VALUE STACK + TRUST -->
@@ -3387,8 +3387,8 @@
                 </button>
                 <button class="buy-now-button secondary" id="buy-button-secondary" onclick="validateAndBuy('preorder')" disabled style="margin-top: 12px; opacity: 0.5; cursor: not-allowed;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">SELECT SIZE - GET <span style="font-size: 120%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Small Shipping Fee</span>
+                    <span class="button-price">SELECT SIZE - GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">✅ 60-second checkout • ✅ Free shipping • ✅ Secure payment</p>
             </div>
@@ -3439,7 +3439,7 @@
                     secondaryBtn.disabled = false;
                     secondaryBtn.style.opacity = '1';
                     secondaryBtn.style.cursor = 'pointer';
-                    secondaryBtn.querySelector('.button-price').innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
                     
                     // Update warning to success message
                     const warning = document.getElementById('size-warning');
@@ -3470,9 +3470,9 @@
                 // Update all secondary buttons (pre-order)
                 document.querySelectorAll('.buy-now-button.secondary .button-price').forEach(btn => {
                     if (size) {
-                        btn.innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
+                        btn.innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
                     } else {
-                        btn.innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> - WAIT 2 WEEKS`;
+                        btn.innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span>`;
                     }
                 });
                 
@@ -3485,7 +3485,7 @@
                 }
                 
                 if (secondaryBtn && size) {
-                    secondaryBtn.querySelector('.button-price').innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
                 }
             }
             
@@ -3512,10 +3512,10 @@
                 
                 // Set correct prices based on type
                 if (type === 'instock') {
-                    selectedPrice = 49;
+                    selectedPrice = 99;
                     selectedProductType = 'order-now';
                 } else {
-                    selectedPrice = 29;
+                    selectedPrice = 19;
                     selectedProductType = 'pre-order';
                 }
                 
@@ -3791,15 +3791,15 @@
             </div>
             
             <div style="text-align: center; margin-top: 24px;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4016,13 +4016,13 @@
             </div>
             
             <div style="text-align: center; margin: 24px 0;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4408,15 +4408,15 @@
             </section>
             
             <div style="text-align: center; margin-top: 40px;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4629,15 +4629,15 @@
             </div>
             
             <div style="text-align: center; margin: 24px 0;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
             
@@ -4669,15 +4669,15 @@
             </div>
             
             <div style="text-align: center; margin: 24px 0;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4699,15 +4699,15 @@
             </div>
             
             <div class="section-cta">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">60-second eco-checkout • Plants 5 trees • Free shipping</p>
             </div>
@@ -4751,15 +4751,15 @@
             </div>
             
             <div style="text-align: center; margin-top: 32px;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4833,15 +4833,15 @@
             <p style="text-align: center; margin-top: 24px; font-weight: 600;">You save money. Planet gets trees. Everyone wins.</p>
             
             <div style="text-align: center; margin-top: 32px;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4862,15 +4862,15 @@
                 <p style="font-size: 18px; line-height: 1.8; color: #333; margin-bottom: 32px;">
                     not you getting the same fit for $29 while they're out here dropping €1,140 🤡 this is what we call being THAT girl. the one who just gets it. you literally won.
                 </p>
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4916,15 +4916,15 @@
             </p>
             
             <div style="text-align: center; margin-top: 24px;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4958,15 +4958,15 @@
             </div>
             
             <div style="text-align: center;">
-                <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
                     <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
                     <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
-                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
-                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -5193,11 +5193,13 @@
         
         // Handle button clicks for order now vs pre-order
         function addToCart(type, price) {
-    // Dual pricing: $99 immediate or FREE with wait
+    // Dual pricing: $99 immediate or FREE + $19 shipping
     if (type === 'order-now') {
         price = 99; // Immediate shipping price
+        selectedPrice = 99;
     } else {
-        price = 0; // FREE but with shipping cost at checkout
+        price = 19; // FREE but $19 shipping
+        selectedPrice = 19;
     }
             // Check if size is selected first
             if (!selectedSize) {
@@ -5209,9 +5211,9 @@
             selectedProductType = type;
             // Set correct prices: order-now = $49, pre-order = $29
             if (type === 'order-now') {
-                selectedPrice = 49;
+                selectedPrice = 99;
             } else if (type === 'pre-order') {
-                selectedPrice = 29;
+                selectedPrice = 19;
             } else {
                 selectedPrice = price;
             }
@@ -5271,8 +5273,9 @@
                 return;
             }
             
-            // Redirect to SimpleSwap with $29 amount
-            window.location.href = 'https://simpleswap.io/exchange?from=usd-usd&to=pol-matic&amount=29';
+            // Redirect to SimpleSwap with correct amount based on selection
+            const finalAmount = (type === 'order-now') ? 99 : 19;
+            window.location.href = `https://simpleswap.io/exchange?from=usd-usd&to=pol-matic&amount=${finalAmount}`;
         }
         
         // Enhanced Carousel Navigation Functions
@@ -5374,8 +5377,8 @@
             
             console.log('🚀 Initiating payment gateway redirect from popup button');
             
-            // Generate SimpleSwap URL with selected price
-            const amount = selectedPrice || 49;
+            // Generate SimpleSwap URL with correct price
+            const amount = selectedPrice === 99 ? 99 : 19;
             const simpleswapUrl = `https://simpleswap.io/exchange?from=usd-usd&to=pol-matic&amount=${amount}`;
             
             console.log('💰 Amount:', amount);
@@ -6017,7 +6020,7 @@
 // Fixed SimpleSwap popup function for mobile
 function showSimpleSwapPopup() {
     const walletAddress = '0xE5173e7c3089bD89cd1341b637b8e1951745ED5C';
-    const amount = selectedPrice || 29;
+    const amount = selectedPrice === 99 ? 99 : 19;
     
     // Copy wallet address to clipboard
     if (navigator.clipboard) {
@@ -6121,7 +6124,7 @@ function showSimpleSwapPopup() {
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
                         <div>
                             <div style="color: #666; font-size: 11px; margin-bottom: 2px;">You send</div>
-                            <div style="font-size: 18px; font-weight: 700;">${amount}</div>
+                            <div style="font-size: 18px; font-weight: 700;">$${amount}</div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <span style="background: #e0e0e0; padding: 3px 8px; border-radius: 4px; font-size: 12px;">USD ✔️</span>
@@ -6133,7 +6136,7 @@ function showSimpleSwapPopup() {
                     <div style="display: flex; align-items: center; justify-content: space-between;">
                         <div>
                             <div style="color: #666; font-size: 11px; margin-bottom: 2px;">You get ≈</div>
-                            <div style="font-size: 16px; font-weight: 600;">${amount === 29 ? '16.47' : '27.80'}</div>
+                            <div style="font-size: 16px; font-weight: 600;">${amount === 19 ? '10.82' : '56.21'}</div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <span style="background: #9b59b6; color: white; padding: 2px 6px; border-radius: 3px; font-size: 10px; font-weight: 600;">POL</span>
@@ -6354,7 +6357,7 @@ function showSimpleSwapPopup() {
         
         function updateCheckoutPrice(price) {
             selectedPrice = price;
-            selectedProductType = price === 19 ? 'pre-order' : 'order-now';
+            selectedProductType = (price === 19) ? 'pre-order' : 'order-now';
             closeCheckoutPopup();
             showCheckoutPopup();
         }
@@ -6508,7 +6511,7 @@ function showSimpleSwapPopup() {
                                     <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 15px; position: relative; overflow: hidden;">
                                         <div style="font-size: 12px; opacity: 0.6; margin-bottom: 8px;">SimpleSwap Preview:</div>
                                         <div style="display: flex; gap: 10px; align-items: center;">
-                                            <div style="background: #2ECC71; padding: 8px 16px; border-radius: 5px; font-size: 14px;">$29</div>
+                                            <div style="background: #2ECC71; padding: 8px 16px; border-radius: 5px; font-size: 14px;">$<span class="swap-amount">19</span></div>
                                             <div style="font-size: 20px;">→</div>
                                             <div style="background: #9B59B6; padding: 8px 16px; border-radius: 5px; font-size: 14px;">MATIC</div>
                                         </div>
@@ -6723,7 +6726,7 @@ function showSimpleSwapPopup() {
                 indicator.style.color = '#F39C12';
                 indicator.innerHTML = `
                     <div style="font-weight: 600;">🎭 PROJECT QUANTUM: STANDBY</div>
-                    <div style="opacity: 0.9;">System loaded • Will activate on SimpleSwap • $29 protection ready</div>
+                    <div style="opacity: 0.9;">System loaded • Will activate on SimpleSwap • Price protection ready</div>
                 `;
             } else {
                 indicator.style.background = 'rgba(231, 76, 60, 0.2)';
