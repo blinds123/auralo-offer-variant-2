@@ -3380,15 +3380,15 @@
             </div>
             
             <div class="section-cta">
-                <button class="buy-now-button primary" id="buy-button-primary" onclick="validateAndBuy('preorder')" disabled style="opacity: 0.5; cursor: not-allowed;">
+                <button class="buy-now-button primary" id="buy-button-primary" onclick="validateAndBuy('instock')" disabled style="opacity: 0.5; cursor: not-allowed;">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">SELECT SIZE - GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" id="buy-button-secondary" onclick="validateAndBuy('instock')" disabled style="margin-top: 12px; opacity: 0.5; cursor: not-allowed;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">SELECT SIZE - PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" id="buy-button-secondary" onclick="validateAndBuy('preorder')" disabled style="margin-top: 12px; opacity: 0.5; cursor: not-allowed;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">SELECT SIZE - GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">✅ 60-second checkout • ✅ Free shipping • ✅ Secure payment</p>
             </div>
@@ -3434,12 +3434,12 @@
                     primaryBtn.disabled = false;
                     primaryBtn.style.opacity = '1';
                     primaryBtn.style.cursor = 'pointer';
-                    primaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
+                    primaryBtn.querySelector('.button-price').innerHTML = `PAY $99 NOW (SIZE ${size})`;
                     
                     secondaryBtn.disabled = false;
                     secondaryBtn.style.opacity = '1';
                     secondaryBtn.style.cursor = 'pointer';
-                    secondaryBtn.querySelector('.button-price').innerHTML = `PAY $99 NOW (SIZE ${size})`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
                     
                     // Update warning to success message
                     const warning = document.getElementById('size-warning');
@@ -3458,16 +3458,16 @@
             
             // Function to update all buy buttons site-wide with selected size
             function updateAllButtonsWithSize(size) {
-                // Update all primary buttons (order now)
+                // Update all primary buttons (grey - $99)
                 document.querySelectorAll('.buy-now-button.primary .button-price').forEach(btn => {
                     if (size) {
-                        btn.innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
+                        btn.innerHTML = `PAY $99 NOW (SIZE ${size})`;
                     } else {
-                        btn.innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span>`;
+                        btn.innerHTML = `PAY $99 NOW`;
                     }
                 });
                 
-                // Update all secondary buttons (pre-order)
+                // Update all secondary buttons (white - FREE)
                 document.querySelectorAll('.buy-now-button.secondary .button-price').forEach(btn => {
                     if (size) {
                         btn.innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
@@ -3481,11 +3481,11 @@
                 const secondaryBtn = document.getElementById('buy-button-secondary');
                 
                 if (primaryBtn && size) {
-                    primaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
+                    primaryBtn.querySelector('.button-price').innerHTML = `PAY $99 NOW (SIZE ${size})`;
                 }
                 
                 if (secondaryBtn && size) {
-                    secondaryBtn.querySelector('.button-price').innerHTML = `PAY $99 NOW (SIZE ${size})`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET FOR <span style="font-size: 130%; font-weight: 800;">FREE!</span> (SIZE ${size})`;
                 }
             }
             
@@ -3791,15 +3791,15 @@
             </div>
             
             <div style="text-align: center; margin-top: 24px;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4408,15 +4408,15 @@
             </section>
             
             <div style="text-align: center; margin-top: 40px;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4629,15 +4629,15 @@
             </div>
             
             <div style="text-align: center; margin: 24px 0;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
             
@@ -4669,15 +4669,15 @@
             </div>
             
             <div style="text-align: center; margin: 24px 0;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4699,15 +4699,15 @@
             </div>
             
             <div class="section-cta">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">60-second eco-checkout • Plants 5 trees • Free shipping</p>
             </div>
@@ -4751,15 +4751,15 @@
             </div>
             
             <div style="text-align: center; margin-top: 32px;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4833,15 +4833,15 @@
             <p style="text-align: center; margin-top: 24px; font-weight: 600;">You save money. Planet gets trees. Everyone wins.</p>
             
             <div style="text-align: center; margin-top: 32px;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4862,15 +4862,15 @@
                 <p style="font-size: 18px; line-height: 1.8; color: #333; margin-bottom: 32px;">
                     not you getting the same fit for $29 while they're out here dropping €1,140 🤡 this is what we call being THAT girl. the one who just gets it. you literally won.
                 </p>
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4916,15 +4916,15 @@
             </p>
             
             <div style="text-align: center; margin-top: 24px;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
@@ -4958,15 +4958,15 @@
             </div>
             
             <div style="text-align: center;">
-                <button class="buy-now-button primary" onclick="addToCart('pre-order', 19)">
+                <button class="buy-now-button primary" onclick="addToCart('order-now', 99)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
-                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
-                </button>
-                <button class="buy-now-button secondary" onclick="addToCart('order-now', 99)" style="margin-top: 12px;">
-                    <!-- ADAPTABLE: Pre-order Price Points -->
                     <span class="button-price">PAY $99 NOW</span>
                     <span class="button-subtext">Get It TODAY - Ships Immediately</span>
+                </button>
+                <button class="buy-now-button secondary" onclick="addToCart('pre-order', 19)" style="margin-top: 12px;">
+                    <!-- ADAPTABLE: Pre-order Price Points -->
+                    <span class="button-price">GET FOR <span style="font-size: 140%; font-weight: 800;">FREE!</span></span>
+                    <span class="button-subtext">Ships in 2 Weeks • Just Cover Shipping</span>
                 </button>
             </div>
         </section>
