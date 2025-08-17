@@ -2568,8 +2568,22 @@
     </style>
     
     <script>
+        // Calculate shipping date (2 weeks from today)
+        function getShippingDate() {
+            const date = new Date();
+            date.setDate(date.getDate() + 14);
+            const options = { month: 'short', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+        
         // TREY LEWELLEN PURCHASE NOTIFICATIONS
         document.addEventListener('DOMContentLoaded', function() {
+            // Populate all shipping dates
+            const shippingDate = getShippingDate();
+            document.querySelectorAll('.shipping-date').forEach(el => {
+                el.textContent = shippingDate;
+            });
+            
             function showPurchaseNotification() {
                 const names = ['Emma', 'Sarah', 'Madison', 'Olivia', 'Sophia', 'Ava', 'Isabella'];
                 const cities = ['NYC', 'LA', 'Miami', 'Chicago', 'Dallas', 'Boston', 'Seattle'];
@@ -2636,16 +2650,17 @@
         top: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(90deg, #000, #333);
+        background: linear-gradient(90deg, var(--accent-bronze), var(--primary-gold));
         color: white;
         padding: 10px;
         text-align: center;
         z-index: 9999;
         font-size: 14px;
         font-weight: 700;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    ">
-        ⚠️ BREAKING: Luxury Brand's €1,140 Mistake = Your FREE Set (Just Cover Shipping)
+        box-shadow: 0 2px 10px rgba(139,115,85,0.5);
+        cursor: pointer;
+    " onclick="document.querySelector('.size-selector').scrollIntoView({behavior: 'smooth'});">
+        💥 €1,140 Set: Pay $99 NOW or Get <span style="font-size: 18px; font-weight: 800;">FREE</span> in 2 Weeks | Choose Below 👇
     </div>
     <div style="height: 40px;"></div>
     <!-- MOBILE-OPTIMIZED HERO SECTION - RUSSELL BRUNSON & TREY LEWELLEN CONVERSION OPTIMIZATION -->
@@ -2677,9 +2692,9 @@
         
         <!-- Hook - Russell Brunson's attention grabber -->
         <h1 class="mobile-hero-headline">
-            "How A Shipping Error Let 47 Girls<br>
-            <span style="color: #ff0000; font-size: 26px; font-weight: 800;">Get €1,140 Sets FREE</span><br>
-            <span style="font-size: 18px; color: var(--primary-gold);">(They Only Paid Shipping)</span>
+            €1,140 Designer Set<br>
+            <span style="color: var(--primary-gold); font-size: 22px;">Get NOW: $99</span><br>
+            <span style="color: #ff0000; font-size: 32px; font-weight: 800;">Or Get <span style="font-size: 38px;">FREE</span> (Wait 2 Weeks)</span>
         </h1>
         
         <!-- Sub-headline with social proof -->
@@ -2696,8 +2711,8 @@
         <!-- Product Image Carousel -->
         <div style="position: relative; margin: 10px 0;">
             <img src="./images/product/lava-top-square.jpg" alt="Desert Road Set" style="width: 100%; border-radius: 10px; max-height: 300px; object-fit: cover;">
-            <div style="position: absolute; top: 10px; left: 10px; background: #ff0000; color: white; padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; animation: pulse 1.5s infinite;">
-                FREE TODAY
+            <div style="position: absolute; top: 10px; left: 10px; background: linear-gradient(90deg, var(--primary-gold), #ff0000); color: white; padding: 8px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; animation: pulse 1.5s infinite;">
+                $99 NOW or FREE
             </div>
         </div>
         
@@ -3100,8 +3115,8 @@
             <!-- TREY LEWELLEN OPTIMIZED HOOK -->
             <div style="text-align: center; margin-bottom: 8px;">
                 <h1 style="font-size: 24px; font-weight: 800; line-height: 1.2; margin: 0 0 8px 0; color: var(--text-dark);">
-                    <span style="color: #ff0000; font-size: 28px;">FREE €1,140 Set</span><br>
-                    <span style="font-size: 16px; color: #666;">(Just Cover Our Shipping Costs)</span>
+                    <span style="color: var(--primary-gold); font-size: 22px;">NOW: $99</span> or <span style="color: #ff0000; font-size: 32px;">FREE</span><br>
+                    <span style="font-size: 16px; color: #666;">Choose: Instant or Patient</span>
                 </h1>
                 <!-- REAL-TIME SOCIAL PROOF -->
                 <div style="font-size: 11px; background: #fff3cd; padding: 4px 8px; border-radius: 4px; margin-bottom: 4px; animation: pulse 2s infinite;">
@@ -3184,7 +3199,7 @@
                         <div>✓ 30-Day Returns</div>
                     </div>
                     <div style="text-align: center; margin-top: 8px; font-size: 13px; font-weight: 700;">
-                        <span style="color: #ff0000; font-size: 16px; font-weight: 700;">Yours FREE Today - Just Cover Shipping</span>
+                        <span style="color: var(--primary-gold);">Pay $99 Now</span> or <span style="color: #ff0000; font-size: 18px; font-weight: 800;">Get FREE</span> <span style="color: #666;">(Wait 2 Weeks)</span>
                     </div>
                     
                     <!-- TRUST BADGES -->
@@ -3367,13 +3382,13 @@
             <div class="section-cta">
                 <button class="buy-now-button primary" id="buy-button-primary" onclick="validateAndBuy('instock')" disabled style="opacity: 0.5; cursor: not-allowed;">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">SELECT SIZE - CLAIM YOUR FREE SET</span>
-                    <span class="button-subtext">Yes! Send Me My FREE €1,140 Set!</span>
+                    <span class="button-price">SELECT SIZE FIRST - GET NOW $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" id="buy-button-secondary" onclick="validateAndBuy('preorder')" disabled style="margin-top: 12px; opacity: 0.5; cursor: not-allowed;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">SELECT SIZE - GET IT FREE</span>
-                    <span class="button-subtext">Just Cover Shipping & Handling</span>
+                    <span class="button-price">SELECT SIZE - GET <span style="font-size: 120%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Small Shipping Fee</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">✅ 60-second checkout • ✅ Free shipping • ✅ Secure payment</p>
             </div>
@@ -3419,12 +3434,12 @@
                     primaryBtn.disabled = false;
                     primaryBtn.style.opacity = '1';
                     primaryBtn.style.cursor = 'pointer';
-                    primaryBtn.querySelector('.button-price').innerHTML = `CLAIM FREE SET (SIZE ${size})`;
+                    primaryBtn.querySelector('.button-price').innerHTML = `GET NOW (SIZE ${size}) - PAY $99`;
                     
                     secondaryBtn.disabled = false;
                     secondaryBtn.style.opacity = '1';
                     secondaryBtn.style.cursor = 'pointer';
-                    secondaryBtn.querySelector('.button-price').innerHTML = `YES! SEND MY FREE SET (SIZE ${size})`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
                     
                     // Update warning to success message
                     const warning = document.getElementById('size-warning');
@@ -3446,18 +3461,18 @@
                 // Update all primary buttons (order now)
                 document.querySelectorAll('.buy-now-button.primary .button-price').forEach(btn => {
                     if (size) {
-                        btn.innerHTML = `CLAIM FREE SET (SIZE ${size})`;
+                        btn.innerHTML = `GET NOW (SIZE ${size}) - PAY $99`;
                     } else {
-                        btn.innerHTML = `CLAIM YOUR FREE SET NOW`;
+                        btn.innerHTML = `GET NOW - PAY $99`;
                     }
                 });
                 
                 // Update all secondary buttons (pre-order)
                 document.querySelectorAll('.buy-now-button.secondary .button-price').forEach(btn => {
                     if (size) {
-                        btn.innerHTML = `YES! SEND MY FREE SET (SIZE ${size})`;
+                        btn.innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
                     } else {
-                        btn.innerHTML = `CLAIM YOUR FREE SET`;
+                        btn.innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> - WAIT 2 WEEKS`;
                     }
                 });
                 
@@ -3466,11 +3481,11 @@
                 const secondaryBtn = document.getElementById('buy-button-secondary');
                 
                 if (primaryBtn && size) {
-                    primaryBtn.querySelector('.button-price').innerHTML = `CLAIM FREE SET (SIZE ${size})`;
+                    primaryBtn.querySelector('.button-price').innerHTML = `GET NOW (SIZE ${size}) - PAY $99`;
                 }
                 
                 if (secondaryBtn && size) {
-                    secondaryBtn.querySelector('.button-price').innerHTML = `YES! SEND MY FREE SET (SIZE ${size})`;
+                    secondaryBtn.querySelector('.button-price').innerHTML = `GET <span style="font-size: 120%; font-weight: 800;">FREE</span> (SIZE ${size}) - SHIPS <span class="shipping-date"></span>`;
                 }
             }
             
@@ -3778,13 +3793,13 @@
             <div style="text-align: center; margin-top: 24px;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4002,12 +4017,12 @@
             
             <div style="text-align: center; margin: 24px 0;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
-                    <span class="button-price">ORDER NOW - <del style="opacity: 0.6;">€1,140</del> $49</span>
-                    <span class="button-subtext">Claim Your FREE Set - Just Cover Shipping</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4041,8 +4056,8 @@
                             <span style="background: linear-gradient(135deg, var(--primary-gold), var(--accent-bronze)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">ARE DIFFERENT</span> 👑
                         </h2>
                         <p style="font-size: 22px; color: #666; max-width: 700px; margin: 0 auto; line-height: 1.6;">
-                            Last week, our warehouse made a €50,000 mistake. They marked these €1,140 sets as "promotional samples." <br>
-                            <strong>My CFO is furious. But legally, we have to honor it. You can get one FREE.</strong>
+                            The €1,140 sets everyone wants. You have two choices: <br>
+                            <strong>Pay $99 and get it tomorrow. Or wait 2 weeks and get it <span style="font-size: 130%;">FREE</span> (just cover shipping).</strong>
                         </p>
                     </div>
                     
@@ -4342,7 +4357,7 @@
                         <p style="font-size: 19px; line-height: 1.8; color: #333; max-width: 800px; margin: 0 auto;">
                             <strong style="color: var(--primary-gold);">Confidence is everything.</strong> The way you feel in what you wear changes how you carry yourself. <br><br>
                             
-                            When you wear this €1,140 set that you got for FREE, you're wearing our mistake. <br><br>
+                            When you wear this €1,140 set that you got for $99 (or <span style="font-size: 120%;">FREE</span>), you're wearing smart choices. <br><br>
                             
                             <span style="font-size: 24px; font-weight: 700; color: #000;">
                                 You're wearing INTELLIGENCE. <br>
@@ -4395,13 +4410,13 @@
             <div style="text-align: center; margin-top: 40px;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4500,7 +4515,7 @@
                         <span style="background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Gatekeeping on TikTok</span>
                     </h2>
                     <p style="font-size: 20px; opacity: 0.9; max-width: 600px; margin: 0 auto;">
-                        POV: You're one of 47 people who found this page before we take it down
+                        POV: You get to choose - instant gratification or patience pays off
                     </p>
                 </div>
                 
@@ -4542,7 +4557,7 @@
         <section style="padding: 60px 20px; background: linear-gradient(135deg, #fff 0%, #fafafa 100%);">
             <div style="max-width: 1200px; margin: 0 auto;">
                 <h2 style="font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 16px;">
-                    HERE'S WHAT HAPPENED 📰 The €50,000 Warehouse Mistake
+                    THE CHOICE IS YOURS 🤔 $99 Now or <span style="font-size: 130%;">FREE</span> Later
                 </h2>
                 <p style="font-size: 18px; color: #666; text-align: center; margin-bottom: 48px;">
                     fr this is why we have 2.3M views and your FYP won't stop showing you this
@@ -4616,13 +4631,13 @@
             <div style="text-align: center; margin: 24px 0;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
             
@@ -4656,13 +4671,13 @@
             <div style="text-align: center; margin: 24px 0;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4672,7 +4687,7 @@
             <h2 class="transparency-title" style="text-align: center; margin-bottom: 24px;">Why Only $29? (Real Talk)</h2>
             
             <div class="transparency-text" style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
-                Listen... I shouldn't be telling you this. Our warehouse manager accidentally marked 47 of these €1,140 sets as "promotional samples" in the system. By EU law, promotional samples can only be given away FREE (we just ask you to cover shipping). My CFO wants to cancel all orders, but our legal team says we HAVE to honor them. So here we are. 47 FREE sets. First come, first served.
+                Real talk: These €1,140 sets are flying off our shelves. Want it NOW? Pay $99 and it ships today. Can you wait 2 weeks? Get it <span style="font-size: 120%; color: #ff0000; font-weight: 700;">FREE</span> (just help with shipping). Most people pay full price. You get to choose your deal.
             </div>
             
             <div class="transparency-text" style="background: #e3f2fd; padding: 16px; border-radius: 8px; margin: 16px 0;">
@@ -4686,13 +4701,13 @@
             <div class="section-cta">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
                 <p style="text-align: center; margin-top: 8px; font-size: 13px; color: #666;">60-second eco-checkout • Plants 5 trees • Free shipping</p>
             </div>
@@ -4738,13 +4753,13 @@
             <div style="text-align: center; margin-top: 32px;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4820,13 +4835,13 @@
             <div style="text-align: center; margin-top: 32px;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4849,13 +4864,13 @@
                 </p>
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4903,13 +4918,13 @@
             <div style="text-align: center; margin-top: 24px;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -4945,13 +4960,13 @@
             <div style="text-align: center;">
                 <button class="buy-now-button primary" onclick="addToCart('order-now', 49)">
                     <!-- ADAPTABLE: Price Points -->
-                    <span class="button-price">YES! CLAIM MY <del style="opacity: 0.6;">€1,140</del> SET FREE</span>
-                    <span class="button-subtext">Just Cover Shipping - Ships Today</span>
+                    <span class="button-price">GET NOW - <del style="opacity: 0.6;">€1,140</del> → $99</span>
+                    <span class="button-subtext">Ships Today - Instant Gratification</span>
                 </button>
                 <button class="buy-now-button secondary" onclick="addToCart('pre-order', 29)" style="margin-top: 12px;">
                     <!-- ADAPTABLE: Pre-order Price Points -->
-                    <span class="button-price">CLAIM YOUR FREE <del style="opacity: 0.6;">€1,140</del> SET</span>
-                    <span class="button-subtext">We'll Ship It FREE (You Cover Handling)</span>
+                    <span class="button-price">GET <span style="font-size: 140%; font-weight: 800;">FREE</span> - <del style="opacity: 0.6;">€1,140</del> → <span style="font-size: 140%; font-weight: 800;">FREE</span></span>
+                    <span class="button-subtext">Wait 2 Weeks (Ships <span class="shipping-date"></span>) + Shipping</span>
                 </button>
             </div>
         </section>
@@ -5178,8 +5193,12 @@
         
         // Handle button clicks for order now vs pre-order
         function addToCart(type, price) {
-    // Free plus shipping - Russell Brunson style
-    // Don't show exact shipping cost, just that it's FREE + shipping
+    // Dual pricing: $99 immediate or FREE with wait
+    if (type === 'order-now') {
+        price = 99; // Immediate shipping price
+    } else {
+        price = 0; // FREE but with shipping cost at checkout
+    }
             // Check if size is selected first
             if (!selectedSize) {
                 // Show size selection popup
