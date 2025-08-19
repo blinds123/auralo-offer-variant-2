@@ -24,10 +24,10 @@
   
   <!-- Review Text -->
   <text x="20" y="140" font-family="Arial, sans-serif" font-size="14" fill="#333333">
-    <tspan x="20" dy="0">"OMG these pants are EVERYTHING! 😍</tspan>
-    <tspan x="20" dy="20">The quality is insane for €19.50!</tspan>
-    <tspan x="20" dy="20">Already ordered 3 more sets. This is</tspan>
-    <tspan x="20" dy="20">your sign to GET IT NOW!"</tspan>
+    <tspan x="20" dy="0">"OMG these Maison Margiela Twist Jeans are EVERYTHING! 😍</tspan>
+    <tspan x="20" dy="20">The quality is insane for the price!</tspan>
+    <tspan x="20" dy="20">Already ordered in every color. This is</tspan>
+    <tspan x="20" dy="20">your sign to GET THEM NOW!"</tspan>
   </text>
   
   <!-- Footer with engagement -->

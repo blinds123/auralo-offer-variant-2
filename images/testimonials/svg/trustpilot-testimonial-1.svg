@@ -38,9 +38,9 @@
   
   <!-- Review Text -->
   <text x="40" y="155" font-family="Arial, sans-serif" font-size="13" fill="#191919">
-    <tspan x="40" dy="0">"Exceeded all expectations! The quality</tspan>
-    <tspan x="40" dy="18">is incredible for €19.50. Fast shipping,</tspan>
-    <tspan x="40" dy="18">perfect fit. Already ordered 2 more sets!"</tspan>
+    <tspan x="40" dy="0">"Exceeded all expectations! The Maison Margiela</tspan>
+    <tspan x="40" dy="18">Twist Jeans quality is incredible. Fast shipping,</tspan>
+    <tspan x="40" dy="18">perfect fit. Already ordered 2 more pairs!"</tspan>
   </text>
   
   <!-- Date -->

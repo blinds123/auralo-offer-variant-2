@@ -14,4 +14,4 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+    Referrer-Policy = "strict-origin-when-cross-origin"<!-- Force deploy at Tue 19 Aug 2025 16:05:27 AEST -->

@@ -38,9 +38,9 @@
   
   <!-- Review Text -->
   <text x="40" y="155" font-family="Arial, sans-serif" font-size="13" fill="#191919">
-    <tspan x="40" dy="0">"Worth every penny! These pants fit like</tspan>
-    <tspan x="40" dy="18">they were tailored for me. Fast shipping</tspan>
-    <tspan x="40" dy="18">and beautiful packaging. Will buy again!"</tspan>
+    <tspan x="40" dy="0">"Worth every penny! These Maison Margiela jeans fit like</tspan>
+    <tspan x="40" dy="18">they were tailored for me. Premium denim quality,</tspan>
+    <tspan x="40" dy="18">fast shipping and beautiful packaging. Will buy again!"</tspan>
   </text>
   
   <!-- Date -->
